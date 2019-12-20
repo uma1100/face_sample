@@ -1,7 +1,6 @@
 window.onload = () => {
   const video  = document.querySelector("#camera");
   const canvas = document.querySelector("#picture");
-  const se     = document.querySelector('#se');
 
   /** カメラ設定 */
   const constraints = {
@@ -42,5 +41,8 @@ window.onload = () => {
 
     // canvasに画像を貼り付ける
     ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+  });
+  $('#image_submit').click(function () { 
+    //   console.log($('#image_file').val());
   });
 };

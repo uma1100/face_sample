@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Camera Test</title>
-  <style>
-  canvas, video{
-    border: 1px solid gray;
-  }
-  </style>
+    <meta charset="UTF-8">
+    <title>Camera Test</title>
+    <style>
+        canvas,
+        video {
+            border: 1px solid gray;
+        }
+    </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <body>
 
-<h1>HTML5カメラ</h1>
+    <h1>HTML5カメラ</h1>
 
-<video id="camera" width="300" height="200"></video>
-<canvas id="picture" width="300" height="200"></canvas>
-<form>
-  <button type="button" id="shutter">シャッター</button>
-</form>
+    <video id="camera" width="300" height="200"></video>
+    <canvas id="picture" width="300" height="200"></canvas>
+    <form>
+        <button type="button" id="shutter">シャッター</button>
+    </form>
 
-<input type="file" accept="image/*">
-
-<script src="main.js"></script>
+    <input id="image_file" type="file" accept="image/*">
+    <button id="image_submit" type="submit">アップロード</button>
+    <script src="main.js"></script>
 </body>
+
 </html>
