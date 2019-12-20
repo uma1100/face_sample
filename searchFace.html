@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script type="text/javascript" src="common.js"></script>
     <link rel="stylesheet" type="text/css" href="common.css">
-    <title>人脸搜索</title>
+    <title>結果</title>
 </head>
 
 
@@ -37,7 +37,7 @@
     <!--选择照片用于搜索-->
     <input id="input2" type="file" accept="image/*" onchange="selectImage2(this)"/>
 
-    <div style="text-align: left">搜索结果:</div>
+    <div style="text-align: left">結果:</div>
     <img id="preview">
 </div>
 </body>
@@ -59,15 +59,15 @@
     //创建人脸集合
     function createFaceSet() {
 
-        const display_name = '人脸识别'; //集合名称
+        const display_name = '計測結果'; //集合名称
         const outer_id = 'myfaceset'; //自定义的唯一标识
         var param = {'display_name':display_name,'outer_id':outer_id,force_merge:'1'};
 
         facepp.faceSetCreate(null, function (e) {
             //成功的回调
-            console.log('创建人脸集合完成');
+            console.log('データセットの形成が成功しました');
             faceset_token = e.faceset_token;
-            alert('创建人脸集合完成,请执行第二步');
+            alert('対象データ2を設定してください');
 
             //禁用第一个按钮
             document.getElementById('firstButton').onclick = function () {
@@ -75,8 +75,8 @@
             };
         }, function (e) {
             //失败的回调
-            console.log('创建人脸集合失败，请重新执行第一步');
-            alert('创建人脸集合完成,请执行第二步');
+            console.log('失敗しました');
+            alert('対象データ2を設定して下さい');
         });
     }
 
